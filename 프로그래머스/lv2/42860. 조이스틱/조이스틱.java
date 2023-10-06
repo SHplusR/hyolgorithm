@@ -26,7 +26,8 @@ class Solution {
                 while(idx < length && nameList[idx] == 0){
                     idx++;
                 }
-                movement = Math.min(movement, i+(length-idx)+Math.min(i,length-idx));
+                movement = Math.min(movement, i * 2 + (length - idx));
+                movement = Math.min(movement, i + (length - idx) * 2);
             }
             return answer+movement;
         }
