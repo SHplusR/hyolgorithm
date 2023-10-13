@@ -21,9 +21,7 @@ class Main {
     }
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
         int n = Integer.parseInt(br.readLine());
-        ArrayDeque <lecture> lecDeque = new ArrayDeque<>();
         ArrayList<lecture> lectures = new ArrayList<>(n);
         PriorityQueue<Integer> lecPq = new PriorityQueue<>();
         for(int i=0; i<n; i++) {
