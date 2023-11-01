@@ -1,14 +1,14 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
         int[] numbers = new int[N];
+        String[] strings = br.readLine().split(" ");
         for (int i = 0; i < N; i++) {
-            numbers[i] = sc.nextInt();
+            numbers[i] = Integer.parseInt(strings[i]);
         }
-        sc.close();
 
         // dp[i][j]: i번째 숫자까지 사용하여 합이 j인 등식의 개수
         long[][] dp = new long[N - 1][21];
@@ -27,6 +27,7 @@ public class Main {
                     }
                     if (nextSum2 >= 0 && nextSum2 <= 20) {
                         dp[i][nextSum2] += dp[i - 1][j];
+
                     }
                 }
             }
