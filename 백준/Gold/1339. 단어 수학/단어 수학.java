@@ -13,13 +13,12 @@ public class Main {
         for(int i=0; i<n; i++){
             alphaNum(br.readLine());
         }
-        Integer[] alphaInteger = Arrays.stream(alpha).boxed().toArray(Integer[]::new);
-        Arrays.sort(alphaInteger, Collections.reverseOrder());
-        
-        for(int i=0; i<alphaInteger.length; i++){
-            if(alphaInteger[i] == 0) break;
+        Arrays.sort(alpha);
+
+        for(int i=alpha.length-1; i>=0; i--){
+            if(alpha[i] == 0) break;
             else{
-                answer += alphaInteger[i]*k;
+                answer += alpha[i]*k;
                 k--;
             }
         }
